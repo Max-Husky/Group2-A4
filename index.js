@@ -17,7 +17,7 @@ async function loadPaths() {
       posts = fs.promises.readdir(__dirname + '/paths/post', {encoding: 'utf8'});
 
   gets = await gets;
-  for (let i of await gets) {
+  for (let i of gets) {
     try {
       api.get('/' + i.slice(0, + i.indexOf('.')), require(__dirname + '/paths/get/' + i).bind(undefined, mongodb));
       console.debug(`loaded get: /${i.slice(0, i.indexOf('.'))}`);
@@ -27,7 +27,7 @@ async function loadPaths() {
   }
 
   posts = await posts;
-  for (let i of await posts) {
+  for (let i of posts) {
     try {
       api.post('/' + i.slice(0, i.indexOf('.')), require(__dirname + '/paths/post/' + i).bind(undefined, mongodb));
       console.debug(`loaded post: /${i}`);

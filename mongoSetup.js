@@ -1,4 +1,4 @@
-const MONGO_DB_URL = "mongodb+srv://admin:Moyekeno03@cluster0.qwmoijz.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_DB_URL = "mongodb+srv://admin:M5tMmEGQ2K73p8G@cluster0.eksxawb.mongodb.net/?retryWrites=true&w=majority";
 
 const mongo = require('mongoose');
 const fs = require('fs');
@@ -8,7 +8,7 @@ mongo.connect(MONGO_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongo.connection;
 
 // db connection/error messages
-db.once('connection', () => {console.log(`Mongo Connected`)});
+db.once('open', () => {console.log(`Mongo Connected`)});
 db.on('error', err => {
   console.log('Error in mongo: ' + err);
 });
