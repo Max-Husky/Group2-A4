@@ -1,4 +1,4 @@
-const MONGO_DB_URL = "mongodb://localhost/test1";
+const MONGO_DB_URL = "mongodb+srv://admin:Moyekeno03@cluster0.qwmoijz.mongodb.net/?retryWrites=true&w=majority";
 
 const mongo = require('mongoose');
 const fs = require('fs');
